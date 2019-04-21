@@ -2,6 +2,10 @@ package selab.mvc.controllers;
 
 import org.json.JSONObject;
 import selab.mvc.models.DataContext;
+import selab.mvc.models.entities.Course;
+import selab.mvc.models.entities.Enrollment;
+import selab.mvc.models.entities.Student;
+import selab.mvc.views.JsonView;
 import selab.mvc.views.View;
 
 import java.io.IOException;
@@ -19,11 +23,19 @@ public class AddStudentToCourseController extends Controller {
             throw new IOException("Method not supported");
 
         JSONObject input = readJson(body);
-        String studentNo = input.getString("studentNo");
-        String courseNo = input.getString("courseNo");
-        String points = input.getString("points");
+        String studentNumber = input.getString("studentNo");
+        String courseNumber = input.getString("courseNo");
+        String point = input.getString("points");
 
-        // TODO: Add required codes to associate the student with course
-        return null;
+        Student student = this.dataContext.getStudents().get(studentNumber);
+        Course course = this.dataContext.getCourses().get(courseNumber);
+        Enrollment enrollment = new Enrollment(course, student, point);
+        this.dataContext.getEnrollments().add(enrollment);
+
+
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("success", "true");
+        return new JsonView(resultJson);
+
     }
 }
