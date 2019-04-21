@@ -5,21 +5,25 @@ import selab.mvc.controllers.Controller;
 import selab.mvc.models.DataContext;
 import selab.mvc.models.DataSet;
 import selab.mvc.models.entities.Course;
+import selab.mvc.models.entities.Enrollment;
 import selab.mvc.models.entities.Student;
 import selab.mvc.views.JsonView;
 import selab.mvc.views.View;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RemoveCourseController extends Controller {
 
-    DataSet<Course> courses;
+    private DataSet<Course> courses;
+    private DataSet<Enrollment> enrollments;
     public RemoveCourseController(DataContext dataContext) {
         super(dataContext);
         courses = dataContext.getCourses();
+        enrollments = dataContext.getEnrollments();
     }
 
     @Override
@@ -28,11 +32,21 @@ public class RemoveCourseController extends Controller {
             throw new IOException("Method not supported");
 
         JSONObject input = readJson(body);
-        String courseNo = input.getString("courseNo");
+        String courseNumber = input.getString("courseNo");
 
-        // TODO: Add codes for removing the course
+        Course course = this.dataContext.getCourses().get(courseNumber);
+        ArrayList<Enrollment> deletedEnrollment = new ArrayList<Enrollment>();
+        for(Enrollment enrollment : enrollments.getAll()){
+            if(enrollment.getCourse().getPrimaryKey().equals(course.getPrimaryKey()))
+                deletedEnrollment.add(enrollment);
+        }
+        for(Enrollment enrollment : deletedEnrollment)
+            this.dataContext.getEnrollments().delete(enrollment);
+        this.dataContext.getCourses().delete(course);
 
-        return null;
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("success", "true");
+        return new JsonView(resultJson);
     }
 
     @Override

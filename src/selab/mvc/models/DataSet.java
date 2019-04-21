@@ -15,6 +15,14 @@ public class DataSet<T extends Model> {
         set.put(key, entity);
     }
 
+    public void delete(T entity) {
+        String key = entity.getPrimaryKey();
+        if (!set.containsKey(key))
+            throw new IllegalArgumentException("No such element.");
+
+        set.remove(key);
+    }
+
     public T get(String key) {
         return set.get(key);
     }
