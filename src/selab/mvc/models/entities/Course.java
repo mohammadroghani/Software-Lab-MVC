@@ -13,6 +13,7 @@ public class Course implements Model {
     private String endTime = null;
     private Weekday weekday;
     private ArrayList<String> students;
+    private float average;
 
 
     @Override
@@ -63,8 +64,11 @@ public class Course implements Model {
     }
 
     public float getAverage() {
-        // TODO: Calculate and return the average of the points
-        return 0;
+        return this.average;
+    }
+
+    public void setAverage(float average){
+        this.average = average;
     }
 
     public String getStudents() {

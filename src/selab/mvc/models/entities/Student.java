@@ -9,6 +9,7 @@ public class Student implements Model {
     private String name;
     private String studentNo;
     private ArrayList<String> courses;
+    private float average;
 
     @Override
     public String getPrimaryKey() {
@@ -27,8 +28,11 @@ public class Student implements Model {
     public String getStudentNo() { return this.studentNo; }
 
     public float getAverage() {
-        // TODO: Calculate and return the average of the points
-        return 0;
+        return this.average;
+    }
+
+    public void setAverage(float average){
+        this.average = average;
     }
 
     public String getCourses() {

@@ -30,12 +30,18 @@ public class StudentListController extends Controller {
         JSONObject result = new JSONObject();
         for(Student student : students.getAll()){
             ArrayList<String> courses = new ArrayList<String>();
+            float totalPoint = 0;
             for (Enrollment enrollment : enrollments.getAll()) {
                 if (enrollment.getStudent().getPrimaryKey().equals(student.getPrimaryKey())) {
                     courses.add(enrollment.getCourse().getTitle());
+                    totalPoint += enrollment.getEnrollmentPoint();
                 }
             }
             student.setCourses(courses);
+            if(courses.size() == 0)
+                student.setAverage(0);
+            else
+                student.setAverage(totalPoint / courses.size());
         }
 
         result.put("students", new JSONArray(students.getAll()));
