@@ -2,11 +2,13 @@ package selab.mvc.models.entities;
 
 import selab.mvc.models.Model;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class Student implements Model {
     private String name;
     private String studentNo;
+    private ArrayList<String> courses;
 
     @Override
     public String getPrimaryKey() {
@@ -30,8 +32,18 @@ public class Student implements Model {
     }
 
     public String getCourses() {
-        // TODO: Return a comma separated list of course names
-        return "-";
+        if(courses.size() == 0) {
+            return "-";
+        }
+        String result = "";
+        for(String course : courses){
+            result = result + course + ", ";
+        }
+        return result.substring(0, result.length() - 2);
+    }
+
+    public void setCourses(ArrayList<String> courses){
+        this.courses = courses;
     }
 
     /**
