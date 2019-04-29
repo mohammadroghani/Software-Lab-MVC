@@ -107,10 +107,11 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="105" lean-forward="false" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
+            <state relative-caret-position="105">
+              <caret line="7" column="117" lean-forward="false" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
               <folding>
-                <marker date="1556548242000" expanded="true" signature="229:320" ph="sshpass -…09324 java" />
+                <marker date="1556548503000" expanded="true" signature="15:445" ph="script: &lt;6 items&gt;" />
+                <marker date="1556548503000" expanded="true" signature="335:445" ph="sshpass -…/run.jar &amp;" />
               </folding>
             </state>
           </provider>
@@ -794,7 +795,7 @@
       <updated>1555097317966</updated>
       <workItem from="1555097323800" duration="26244000" />
       <workItem from="1555869176453" duration="6859000" />
-      <workItem from="1556540575184" duration="7309000" />
+      <workItem from="1556540575184" duration="7521000" />
     </task>
     <servers />
   </component>
@@ -807,7 +808,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40412000" />
+    <option name="totallyTimeSpent" value="40624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1317,14 +1318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1333,12 +1326,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="105" lean-forward="false" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
+        <state relative-caret-position="105">
+          <caret line="7" column="117" lean-forward="false" selection-start-line="7" selection-start-column="117" selection-end-line="7" selection-end-column="117" />
           <folding>
-            <marker date="1556548242000" expanded="true" signature="229:320" ph="sshpass -…09324 java" />
+            <marker date="1556548503000" expanded="true" signature="15:445" ph="script: &lt;6 items&gt;" />
+            <marker date="1556548503000" expanded="true" signature="335:445" ph="sshpass -…/run.jar &amp;" />
           </folding>
         </state>
       </provider>
