@@ -4,5 +4,5 @@ script:
     - ant test
     - sudo apt-get install sshpass
     - sshpass -p "mohammadroghani43@gmail.com" scp -o StrictHostKeyChecking=no jars/run.jar 94109324@198.144.184.34:/home/94109324/
-    - sshpass -p "mohammadroghani43@gmail.com" ssh 94109324@198.144.184.34 pkill -u 94109324 java
+    - sshpass -p "mohammadroghani43@gmail.com" ssh 94109324@198.144.184.34 pkill -u 94109324 java || echo
     - sshpass -p "mohammadroghani43@gmail.com" ssh 94109324@198.144.184.34 nohup java -jar /home/94109324/run.jar &
