@@ -2,3 +2,7 @@ language: java
 script:
     - ant compile
     - ant test
+    - sudo apt-get install sshpass
+    - sshpass -p "{mohammadroghani43@gmail.com}" scp -o StrictHostKeyChecking=no server.jar {94109324}@198.144.184.34:/home/{94109324}/
+    - sshpass -p "{mohammadroghani43@gmail.com}" ssh {94109324}@198.144.184.34 pkill java
+    - sshpass -p "{mohammadroghani43@gmail.com}" ssh {94109324}@198.144.184.34 nohup java -jar /home/{94109324}/server.jar &
