@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Hello World Project">
+<project name="MVC">
     <target name="compile">
         <javac srcdir="src" destdir="out">
             <classpath>
@@ -23,7 +23,7 @@
         </jar>
     </target>
 
-    <target name="junit" depends="compile">
+    <target name="test" depends="compile">
         <junit printsummary="yes" haltonfailure="yes" fork="yes">
             <classpath>
                 <pathelement path="lib/junit-4.12.jar"/>
