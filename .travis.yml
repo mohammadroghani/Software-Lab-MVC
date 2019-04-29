@@ -1,2 +1,4 @@
-ant compile
-ant test
+language: java
+script:
+    - ant compile
+    - ant test
